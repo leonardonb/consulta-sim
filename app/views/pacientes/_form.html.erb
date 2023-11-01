@@ -30,8 +30,38 @@
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
   </div>
+  <h2>Endereço</h2>
+
+  <%= form.fields_for :endereco do |endereco_form| %>
+    <div class="field">
+      <%= endereco_form.label :cep %>
+      <%= endereco_form.text_field :cep %>
+    </div>
+
+    <div class="field">
+      <%= endereco_form.label :cidade %>
+      <%= endereco_form.text_field :cidade %>
+    </div>
+
+    <div class="field">
+      <%= endereco_form.label :bairro %>
+      <%= endereco_form.text_field :bairro %>
+    </div>
+
+    <div class="field">
+      <%= endereco_form.label :logradouro %>
+      <%= endereco_form.text_field :logradouro %>
+    </div>
+
+    <div class="field">
+      <%= endereco_form.label :complemento %>
+      <%= endereco_form.text_field :complemento %>
+    </div>
+  <%end%>
 
   <div>
     <%= form.submit %>
   </div>
-<% end %>
+  <%end%>
+
+
