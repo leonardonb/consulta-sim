@@ -19,4 +19,34 @@
     <%= paciente.email %>
   </p>
 
+  <p>
+    <strong>Telefone:</strong>
+    <%= paciente.telefone %>
+  </p>
+
+  <p>
+    <strong>CEP:</strong>
+    <%= paciente.endereco.cep if paciente.endereco %>
+  </p>
+
+  <p>
+    <strong>Cidade:</strong>
+    <%= paciente.endereco.cidade if paciente.endereco %>
+  </p>
+
+  <p>
+    <strong>Bairro:</strong>
+    <%= paciente.endereco.bairro if paciente.endereco %>
+  </p>
+
+  <p>
+    <strong>Logradouro:</strong>
+    <%= paciente.endereco.logradouro if paciente.endereco %>
+  </p>
+
+  <p>
+    <strong>Complemento:</strong>
+    <%= paciente.endereco.complemento if paciente.endereco %>
+  </p>
+
 </div>

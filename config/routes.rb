@@ -12,12 +12,8 @@ Rails.application.routes.draw do
   #get '/consultas/search_by_medico', to: 'consultas#search_by_medico'
   #get '/consultas/search_by_paciente', to: 'consultas#search_by_paciente'
 
+
   resources :consultas
   resources :pacientes
-  resources :enderecos
   resources :medicos
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

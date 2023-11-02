@@ -18,6 +18,7 @@ class PacientesTest < ApplicationSystemTestCase
     fill_in "Data nasc", with: @paciente.data_nasc
     fill_in "Email", with: @paciente.email
     fill_in "Nome", with: @paciente.nome
+    fill_in "Telefone", with: @paciente.telefone
     click_on "Create Paciente"
 
     assert_text "Paciente was successfully created"
@@ -32,6 +33,7 @@ class PacientesTest < ApplicationSystemTestCase
     fill_in "Data nasc", with: @paciente.data_nasc
     fill_in "Email", with: @paciente.email
     fill_in "Nome", with: @paciente.nome
+    fill_in "Telefone", with: @paciente.telefone
     click_on "Update Paciente"
 
     assert_text "Paciente was successfully updated"

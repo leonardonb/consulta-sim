@@ -6,9 +6,10 @@
   <% @pacientes.each do |paciente| %>
     <%= render paciente %>
     <p>
-      <%= link_to "Show this paciente", paciente %>
+      <%= button_to "Mostre este paciente", paciente_path(paciente), method: :get, class: "btn btn-primary" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New paciente", new_paciente_path %>
+<%= button_to "Novo paciente", new_paciente_path, method: :get, class: "btn btn-primary" %>
+<%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>

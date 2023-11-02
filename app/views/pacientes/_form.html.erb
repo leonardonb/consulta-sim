@@ -30,8 +30,13 @@
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
   </div>
-  <h2>Endereço</h2>
 
+  <div>
+    <%= form.label :telefone, style: "display: block" %>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <h2>Endereço</h2>
   <%= form.fields_for :endereco do |endereco_form| %>
     <div class="field">
       <%= endereco_form.label :cep %>
@@ -57,11 +62,8 @@
       <%= endereco_form.label :complemento %>
       <%= endereco_form.text_field :complemento %>
     </div>
-  <%end%>
-
+    <%end%>
   <div>
     <%= form.submit %>
   </div>
-  <%end%>
-
-
+<% end %>

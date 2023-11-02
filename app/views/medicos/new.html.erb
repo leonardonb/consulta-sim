@@ -1,9 +1,11 @@
-<h1>New medico</h1>
+<h1>Novo Médico</h1>
 
 <%= render "form", medico: @medico %>
 
 <br>
 
 <div>
-  <%= link_to "Back to medicos", medicos_path %>
+  <%= button_to "Voltar para Médicos", medicos_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+
 </div>

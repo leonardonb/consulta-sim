@@ -1,9 +1,11 @@
-<h1>New paciente</h1>
+<h1>Novo paciente</h1>
 
 <%= render "form", paciente: @paciente %>
 
 <br>
 
 <div>
-  <%= link_to "Back to pacientes", pacientes_path %>
+  <%= button_to "Voltar para pacientes", pacientes_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+
 </div>

@@ -1,10 +1,14 @@
+<h1>Médicos</h1>
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @medico %>
 
 <div>
-  <%= link_to "Edit this medico", edit_medico_path(@medico) %> |
-  <%= link_to "Back to medicos", medicos_path %>
+  <%= button_to "Deletar este Médico", @medico, method: :delete %>
 
-  <%= button_to "Destroy this medico", @medico, method: :delete %>
+  <%= button_to "Editar Médico", edit_medico_path(@medico), method: :get, class: "btn btn-primary" %> |
+  <%= button_to "Voltar para Médicos", medicos_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+
 </div>

@@ -1,10 +1,12 @@
-<h1>Editing paciente</h1>
+<h1>Editar paciente</h1>
 
 <%= render "form", paciente: @paciente %>
 
 <br>
 
 <div>
-  <%= link_to "Show this paciente", @paciente %> |
-  <%= link_to "Back to pacientes", pacientes_path %>
+  <%= button_to "Mostrar este paciente", paciente_path(@paciente), method: :get, class: "btn btn-primary" %> |
+  <%= button_to "Voltar para pacientes", pacientes_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+
 </div>

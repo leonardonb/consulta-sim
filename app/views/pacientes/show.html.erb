@@ -1,10 +1,68 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @paciente %>
+<h1>Detalhes do Paciente</h1>
 
 <div>
-  <%= link_to "Edit this paciente", edit_paciente_path(@paciente) %> |
-  <%= link_to "Back to pacientes", pacientes_path %>
+  <div>
+    <h2><%= @paciente.nome %></h2>
+    <p>CPF: <%= @paciente.cpf %></p>
+    <p>Data de Nascimento: <%= @paciente.data_nasc %></p>
+    <p>Email: <%= @paciente.email %></p>
+    <p>Telefone: <%= @paciente.telefone %></p>
+  </div>
 
-  <%= button_to "Destroy this paciente", @paciente, method: :delete %>
+  <div>
+    <h2>Endereço</h2>
+    <p>
+      <strong>CEP:</strong>
+      <% if @paciente.endereco %>
+        <%= @paciente.endereco.cep %>
+      <% else %>
+        N/A
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Cidade:</strong>
+      <% if @paciente.endereco %>
+        <%= @paciente.endereco.cidade %>
+      <% else %>
+        N/A
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Bairro:</strong>
+      <% if @paciente.endereco %>
+        <%= @paciente.endereco.bairro %>
+      <% else %>
+        N/A
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Logradouro:</strong>
+      <% if @paciente.endereco %>
+        <%= @paciente.endereco.logradouro %>
+      <% else %>
+        N/A
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Complemento:</strong>
+      <% if @paciente.endereco %>
+        <%= @paciente.endereco.complemento %>
+      <% else %>
+        N/A
+      <% end %>
+    </p>
+  </div>
+
+
+  <div>
+    <%= button_to "Editar dados", edit_paciente_path(@paciente), method: :get, class: "btn btn-primary" %>
+    <%= button_to "Deletar Paciente", @paciente, method: :delete, data: { confirm: "Tem certeza que deseja apagar o paciente?" } %>
+    <%= button_to "Sair", pacientes_path, method: :get, class: "btn btn-primary" %>
+    <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+
+  </div>
 </div>

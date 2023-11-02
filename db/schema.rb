@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_01_054815) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_02_054751) do
   create_table "consultas", force: :cascade do |t|
     t.date "data"
     t.string "horario"
@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_01_054815) do
     t.date "data_nasc"
     t.string "cpf"
     t.string "email"
+    t.string "telefone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
