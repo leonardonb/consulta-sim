@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Consultas</h1>
+
+<div id="consultas">
+  <% @consultas.each do |consulta| %>
+    <%= render consulta %>
+    <p>
+      <%= button_to "Mostrar esta consulta", consulta, method: :get, class: "btn btn-primary" %>
+
+    </p>
+  <% end %>
+</div>
+
+<%= button_to "Nova consulta", new_consulta_path, method: :get, class: "btn btn-primary" %>
+<%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+

@@ -1,0 +1,21 @@
+<div id="<%= dom_id consulta %>">
+  <p>
+    <strong>Data:</strong>
+    <%= consulta.data %>
+  </p>
+
+  <p>
+    <strong>Horario:</strong>
+    <%= consulta.horario %>
+  </p>
+
+  <p>
+    <strong>Paciente:</strong>
+    <%= consulta.paciente.nome if consulta.paciente %>
+  </p>
+
+  <p>
+    <strong>Medico:</strong>
+    <%= consulta.medico.nome if consulta.medico %>
+  </p>
+</div>

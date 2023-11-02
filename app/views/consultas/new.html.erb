@@ -1,0 +1,12 @@
+<h1>Nova consulta</h1>
+
+<%= render "form", consulta: @consulta %>
+
+<br>
+
+<div>
+  <%= button_to "Voltar para as consultas", consultas_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+
+</div>
+
