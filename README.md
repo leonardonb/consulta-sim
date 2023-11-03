@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto desenvolvido para a disciplina de Engenharia de Software a qual demandou algumas horas de estudo.
 
-Things you may want to cover:
+Projeto foi começado do zero 05 vezes, sendo duas no linux e três no windows. 
 
-* Ruby version
+Problemas encontrados: Dificuldade em rodas as versões solicitadas pelo professor, erros em banco de dados, erros por pequenos descuidos em momento do scaffold só percebidos em momentos posteriores onde o problema já estava arraigado.
 
-* System dependencies
+Problemas de tempo durante o dia devido a funções profissionais, exigiram pelo menos 4 noites extremamente mal dormidas.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Cheguei ao meu limite técnico atual para resolver as questões deixando apenas uma para ser conversada com o professor sobre o assunto.
