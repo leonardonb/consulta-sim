@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get '/pacientes/search', to: 'pacientes#search', as: 'search_pacientes'
   get 'new_consulta', to: 'consultas#new', as: 'new_consulta'
   post '/new_consulta', to: 'consultas#create'
+  patch '/consultas/:id', to: 'consultas#update', as: :consulta_update
+
+  get '/consultas', to: 'consultas#index', as: 'consultas'
+
 
   #get '/consultas/search', to: 'consultas#search'
   #get '/consultas/search_by_date', to: 'consultas#search_by_date'

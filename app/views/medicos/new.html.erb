@@ -1,11 +1,82 @@
-<h1>Novo Médico</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo Médico</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f7f7;
+          margin: 0;
+          padding: 0;
+          color: #333;
+      }
 
-<%= render "form", medico: @medico %>
+      header {
+          background-color: #00796b;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+      }
 
-<br>
+      h1 {
+          font-size: 36px;
+      }
 
-<div>
-  <%= button_to "Voltar para Médicos", medicos_path, method: :get, class: "btn btn-secondary" %>
-  <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 20px;
+      }
 
+      .form-container {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .field {
+          margin: 10px 0;
+      }
+
+      .btn-container {
+          display: flex;
+          justify-content: center;
+      }
+
+      .btn {
+          margin: 10px;
+          padding: 10px 20px;
+          background-color: #00796b;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+          font-size: 16px;
+      }
+
+      .btn:hover {
+          background-color: #005247;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Novo Médico</h1>
+</header>
+
+<div class="container">
+  <div class="form-container">
+    <%= render "form", medico: @medico %>
+  </div>
 </div>
+
+<div class="container btn-container">
+  <a class="btn" href="<%= medicos_path %>">Voltar para Médicos</a>
+  <a class="btn" href="<%= root_path %>">Voltar para a Página Inicial</a>
+</div>
+</body>
+</html>

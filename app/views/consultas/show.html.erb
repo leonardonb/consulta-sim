@@ -1,19 +1,98 @@
-<h2>Detalhes do Agendamento</h2>
-<div id="consulta-details">
-  <p><span class="label">Paciente: </span> <span class="value"><%= @consulta.paciente.present? ? @consulta.paciente.nome : "Paciente não associado" %></span></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Agendamento</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f7f7;
+          margin: 0;
+          padding: 0;
+          color: #333;
+      }
 
-  <p><span class="label">Data: </span><span class="value"><%= @consulta.data.present? ? @consulta.data.strftime("%d/%m/%Y") : "Data não definida" %></span></p>
+      header {
+          background-color: #00796b;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+      }
 
-  <p><span class="label">Horário: </span>:<span class="value"><%= @consulta.horario.present? ? @consulta.horario.strftime("%H:%M") : "Horário não definido" %></span></p>
+      h2 {
+          font-size: 24px;
+      }
 
-  <p><span class="label">Médico: </span><span class="value"><%= @consulta.medico.present? ? @consulta.medico.nome : "Médico não associado" %></span></p>
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 20px;
+      }
 
-  <div>
-    <%= button_to "Editar Consulta", edit_consulta_path(@consulta), method: :get, class: "btn btn-primary" %>
-    <%= button_to "Apagar Consulta", @consulta, method: :delete, data: { confirm: "Tem certeza que deseja apagar essa consulta? " }, class: "btn btn-danger" %>
-    <%= button_to "Voltar a lista de agendamentos", consultas_path, method: :get, class: "btn btn-secondary" %>
-    <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+      .notice {
+          color: green;
+      }
 
+      .details-container {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .details-container h2 {
+          font-size: 24px;
+          margin-bottom: 10px;
+      }
+
+      .details-container p {
+          margin: 5px 0;
+      }
+
+      .btn-container {
+          display: flex;
+          justify-content: center;
+      }
+
+      .btn {
+          margin: 10px;
+          padding: 10px 20px;
+          background-color: #00796b;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+          font-size: 16px;
+      }
+
+      .btn-danger {
+          background-color: #e74c3c;
+      }
+
+      .btn:hover {
+          background-color: #005247;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h2>Detalhes do Agendamento</h2>
+  <p class="notice"><%= notice %></p>
+</header>
+
+<div class="container">
+  <div class="details-container">
+    <%= render @consulta %>
   </div>
 
+  <div class="btn-container">
+    <a class="btn btn-primary" href="<%= edit_consulta_path(@consulta) %>">Editar Consulta</a>
+    <%= button_to "Apagar Consulta", @consulta, method: :delete, data: { confirm: "Tem certeza que deseja apagar essa consulta?" }, class: "btn btn-danger" %>
+    <a class="btn btn-secondary" href="<%= consultas_path %>">Voltar para a Lista de Agendamentos</a>
+    <a class="btn btn-secondary" href="<%= root_path %>">Voltar para a Página Inicial</a>
   </div>
+</div>
+</body>
+</html>

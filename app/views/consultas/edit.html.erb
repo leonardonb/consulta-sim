@@ -1,29 +1,39 @@
-<h1>Editar consulta</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metatags e estilos aqui ... -->
+</head>
+<body>
+<header>
+  <h1>Editar Consulta</h1>
+  <p class="notice"><%= notice %></p>
+</header>
 
-<%= form_for @consulta, url: consulta_path(@consulta), method: :patch do |form| %>
-  <!-- Seus campos de edição aqui -->
-  <div class="field">
-    <%= form.label :data %>
-    <%= form.date_select :data, start_year: 2023, end_year: 2030 %>
-  </div>
+<div class="container">
+  <%= form_for @consulta, method: :patch do |form| %>
+    <%= render "form", consulta: @consulta %>
+    <div>
+      <%= form.label :data, style: "display: block" %>
+      <%= form.date_field :data, value: @consulta.data, class: "input" %>
+    </div>
+    <div>
+      <%= form.label :horario, style: "display: block" %>
+      <% if @consulta.horario.is_a?(String) %>
+        <%= form.time_field :horario, class: "input" %>
+      <% else %>
+        <%= form.time_field :horario, value: @consulta.horario.strftime("%H:%M"), class: "input" %>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= form.label :horario %>
-    <%= form.time_select :horario %>
-  </div>
+    <div class="actions">
+      <%= form.submit "Salvar" %>
+    </div>
+  <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :paciente_id %>
-    <%= form.collection_select :paciente_id, Paciente.all, :id, :nome, prompt: "Selecione um paciente" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :medico_id %>
-    <%= form.collection_select :medico_id, Medico.all, :id, :nome, prompt: "Selecione um médico" %>
-  </div>
-
-  <!-- Botão de submissão -->
-  <div class="actions">
-    <%= form.submit "Salvar" %>
-  </div>
-<% end %>
+<div class="container btn-container">
+  <a class="btn" href="<%= consultas_path %>">Voltar para as Consultas</a>
+  <a class="btn" href="<%= root_path %>">Voltar para a Página Inicial</a>
+</div>
+</body>
+</html>

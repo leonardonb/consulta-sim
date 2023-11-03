@@ -1,17 +1,88 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultas</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f7f7;
+          margin: 0;
+          padding: 0;
+          color: #333;
+      }
 
-<h1>Consultas</h1>
+      header {
+          background-color: #00796b;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+      }
 
-<div id="consultas">
+      h1 {
+          font-size: 36px;
+      }
+
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 20px;
+      }
+
+      .notice {
+          color: green;
+      }
+
+      .consulta-container {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-container {
+          display: flex;
+          justify-content: center;
+      }
+
+      .btn {
+          margin: 10px;
+          padding: 10px 20px;
+          background-color: #00796b;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+          font-size: 16px;
+      }
+
+      .btn:hover {
+          background-color: #005247;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Consultas</h1>
+  <p class="notice"><%= notice %></p>
+</header>
+
+<div class="container">
   <% @consultas.each do |consulta| %>
-    <%= render consulta %>
-    <p>
-      <%= button_to "Mostrar esta consulta", consulta, method: :get, class: "btn btn-primary" %>
-
-    </p>
+    <div class="consulta-container">
+      <%= render consulta %>
+      <p>
+        <%= button_to "Mostrar esta consulta", consulta, method: :get, class: "btn btn-primary" %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= button_to "Nova consulta", new_consulta_path, method: :get, class: "btn btn-primary" %>
-<%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
-
+<div class="container btn-container">
+  <a class="btn" href="<%= new_consulta_path %>">Nova consulta</a>
+  <a class="btn" href="<%= root_path %>">Voltar para a Página Inicial</a>
+</div>
+</body>
+</html>

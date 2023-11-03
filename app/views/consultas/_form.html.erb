@@ -20,19 +20,20 @@
     <%= form.collection_select :paciente_id, Paciente.all, :id, :nome, prompt: "Selecione um paciente" %>
   </div>
 
-  <div class="field">
-    <%= form.label :data %>
-    <%= form.date_select :data, start_year: 2023, end_year: 2030 %>
+  <div>
+    <%= form.label :data, style: "display: block" %>
+    <%= form.date_field :data, class: "input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :horario %>
-    <%= form.time_select :horario %>
+  <div>
+    <%= form.label :horario, style: "display: block" %>
+    <%= form.time_field :horario, class: "input" %>
   </div>
+
 
   <div class="actions">
     <%= form.submit "Salvar", class: "btn btn-primary" %>
-    <%= link_to "Voltar para a página inicial", root_path, class: "btn btn-secondary" %>
+
 
   </div>
 

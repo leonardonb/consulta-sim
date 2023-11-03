@@ -1,12 +1,104 @@
-<h1>Nova consulta</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Consulta</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f7f7;
+          margin: 0;
+          padding: 0;
+          color: #333;
+      }
 
-<%= render "form", consulta: @consulta %>
+      header {
+          background-color: #00796b;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+      }
 
-<br>
+      h1 {
+          font-size: 36px;
+      }
 
-<div>
-  <%= button_to "Voltar para as consultas", consultas_path, method: :get, class: "btn btn-secondary" %>
-  <%= button_to "Voltar para a página inicial", root_path, method: :get, class: "btn btn-secondary" %>
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 20px;
+      }
 
+      .notice {
+          color: green;
+      }
+
+      .form-container {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container label {
+          display: inline-block;
+          width: 150px;
+          text-align: right;
+      }
+
+      .form-container input[type="text"], .form-container select {
+          width: 250px;
+          padding: 5px;
+          margin: 5px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+
+      .form-container label.inline-label {
+          width: auto;
+          margin-right: 10px;
+      }
+
+      .form-container input[type="date"], .form-container input[type="time"] {
+          width: 150px;
+      }
+
+      .btn-container {
+          display: flex;
+          justify-content: center;
+      }
+
+      .btn {
+          margin: 10px;
+          padding: 10px 20px;
+          background-color: #00796b;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+          font-size: 16px;
+      }
+
+      .btn:hover {
+          background-color: #005247;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Nova Consulta</h1>
+  <p class="notice"><%= notice %></p>
+</header>
+
+<div class="container">
+  <%= render "form", consulta: @consulta %>
 </div>
 
+<div class="container btn-container">
+  <a class="btn" href="<%= consultas_path %>">Voltar para as Consultas</a>
+  <a class="btn" href="<%= root_path %>">Voltar para a Página Inicial</a>
+</div>
+</body>
+</html>
