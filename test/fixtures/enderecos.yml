@@ -6,7 +6,6 @@ one:
   bairro: MyString
   logradouro: MyString
   complemento: MyString
-  paciente: one
 
 two:
   cep: MyString
@@ -14,4 +13,3 @@ two:
   bairro: MyString
   logradouro: MyString
   complemento: MyString
-  paciente: two
