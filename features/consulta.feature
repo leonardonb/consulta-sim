@@ -4,13 +4,14 @@ Feature: Botao de exclusao de consultas
   So that Realizar a exclusao de consultas de forma mais segura com uma camada visual de recursos.
 
   Scenario: Usuario precisa deletar determinada consulta a pedido do paciente
-    Given Estou na pagina de detalhes da consulta
-    And O paciente em tela quer desmarcar a consulta
-    When Eu clico em apagar consulta
-    Then A consulta sera deletada
+    Given Estou na pagina de consultas
+    And O 'paciente Um' quer desmarcar a consulta
+    When Eu clico em Mostrar essa consulta
+    And Eu clico em apagar consulta
+    Then A consulta foi deletada
 
   Scenario: Paciente consulta horario e desiste da exclusao
     Given Estou na tela de detalhe da consulta
-    And O paciente em tela desiste desmarcar a consulta
+    And O 'paciente um' desiste desmarcar a consulta
     When Eu clico em voltar para tela inicial
     Then A tela inicial sera exibida
