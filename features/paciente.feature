@@ -8,3 +8,8 @@ Feature: Criacao de Novo Paciente
     And eu preencho os campos nome "Paciente X", data_nascimento "16 02 1980", cpf "12345543210", email "pacientex@hipocondria.com", telefone "87999999998", cep "55295000", cidade "Garanhuns", bairro "Heliopolis", logradouro "Rua A", complemento "casa azul"
     When eu aperto no botao para cadastrar o paciente
     Then eu visualizo que o cadastro foi realizado com sucesso
+
+  Scenario: Voltar para tela de pacientes
+    Given Estou na tela de novo paciente
+    When Eu clico em voltar para Pacientes
+    Then A tela de pacientes aparece para consulta

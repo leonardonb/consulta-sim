@@ -24,3 +24,17 @@ end
 Then('eu visualizo que o cadastro foi realizado com sucesso') do
     expect(page).to have_content('Pacientes')
 end
+
+Given('Estou na tela de novo paciente') do
+  visit new_paciente_path
+  expect(page).to have_content('Novo Paciente')
+end
+
+When('Eu clico em voltar para Pacientes') do
+  click_link 'Voltar para Pacientes'
+  visit pacientes_path
+end
+
+Then('A tela de pacientes aparece para consulta') do
+  expect(page).to have_content('Pacientes')
+end
