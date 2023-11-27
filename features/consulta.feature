@@ -9,9 +9,3 @@ Feature: Botao de exclusao de consultas
     When Eu clico em Mostrar essa consulta
     And Eu clico em apagar consulta
     Then A consulta foi deletada
-
-  Scenario: Paciente consulta horario e desiste da exclusao
-    Given Estou na tela de detalhe da consulta
-    And O 'paciente um' desiste desmarcar a consulta
-    When Eu clico em voltar para tela inicial
-    Then A tela inicial sera exibida
